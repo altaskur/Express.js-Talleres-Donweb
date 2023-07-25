@@ -3,6 +3,61 @@
 
 Un repositorio para los talleres de Donweb, explicando cómo funciona Express.js
 
+## Estructura del proyecto
+
++ src
+  + app
+  + db
+  + jwt
+  + models
+  + router
+  + main.js
++ .env
++ .eslintrc.json
++ .gitignore
+
+### Descripción
+
+#### src
+
+Albergará toda la lógica del proyecto
+
+#### app
+
+Encontraremos toda la configuración de express, cómo las rutas y los middleware a utilizar
+
+#### db
+
+Encontraremos la configuración de conexión con la base de datos
+
+#### jwt
+
+Esta las funciones de los JSON Web Tokens
+
+#### models
+
+La estructura de la base de datos (Schemas)
+
+#### Routers
+
+la lógica de cada una de las rutas del proyecto
+
+#### main
+
+El punto de partida de nuestra app
+
+#### .env
+
+Las variables de entorno de nuestro proyecto
+
+#### .eslintrc
+
+La configuración de eslint
+
+#### .gitignore
+
+Los archivos que no queremos que se suban a nuestro repositorio
+
 ## Variables de entorno
 
 Para poder ejecutar el proyecto necesitamos crear un archivo `.env` en la raíz del proyecto, con las siguientes variables de entorno
@@ -15,7 +70,7 @@ Para poder ejecutar el proyecto necesitamos crear un archivo `.env` en la raíz 
 
 ## Instalación del proyecto
 
-Para instalar el proyecto vamos a usar NPM como gestor de librerías en dos tandas,
+Para instalar el proyecto vamos a usar NPM cómo gestor de librerías en dos tandas,
 primero las dependencias necesarias para el proyecto
 
 ```bash
@@ -102,4 +157,4 @@ Iniciamos el servidor
 
 ## Autores
 
-- [@altaskur](https://github.com/altaskur)
++ [@altaskur](https://github.com/altaskur)

@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.45.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1"
+  },
+  "name": "express.js-tallreres-donweb",
+  "description": "Un repositorio para los talleres de Donweb, explicando cómo funciona Express.js",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altaskur/Express.js-Tallreres-Donweb.git"
+  },
+  "author": "Altaskur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/altaskur/Express.js-Tallreres-Donweb/issues"
+  },
+  "homepage": "https://github.com/altaskur/Express.js-Tallreres-Donweb#readme"
+}
