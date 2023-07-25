@@ -18,6 +18,7 @@ Un repositorio para los talleres de Donweb, explicando cómo funciona Express.js
       - [.gitignore](#gitignore)
   - [Variables de entorno](#variables-de-entorno)
   - [Instalación del proyecto](#instalación-del-proyecto)
+    - [Configuración de eslint](#configuración-de-eslint)
   - [Despliegue en local](#despliegue-en-local)
   - [Referencia de la api](#referencia-de-la-api)
     - [Get](#get)
@@ -26,19 +27,18 @@ Un repositorio para los talleres de Donweb, explicando cómo funciona Express.js
     - [Post Eliminamos el elemento](#post-eliminamos-el-elemento)
   - [Autores](#autores)
 
-
 ## Estructura del proyecto
 
-+ src
-  + app
-  + db
-  + jwt
-  + models
-  + router
-  + main.js
-+ .env
-+ .eslintrc.json
-+ .gitignore
+- src
+  - app
+  - db
+  - jwt
+  - models
+  - router
+  - main.js
+- .env
+- .eslintrc.json
+- .gitignore
 
 ### Descripción
 
@@ -106,6 +106,27 @@ Por último, vamos a instalar las dependencias que nos van ayudar con el desarro
 ```bash
   npm i -D nodemon, morgan, eslint
 ```
+
+### Configuración de eslint
+
+Para configurar eslint vamos a ejecutar el siguiente comando
+
+```bash
+  npm init @eslint/config
+```
+
+Y vamos a seguir los pasos que nos indica el asistente
+
+- To check syntax, find problems, and enforce code style
+- CommonJS (require/exports)
+- None of these
+- No
+- Node
+- Use a popular style guide
+- Airbnb: <https://github.com/airbnb/javascript>
+- JSON
+- Yes
+- npm
 
 ## Despliegue en local
 
@@ -181,4 +202,4 @@ Iniciamos el servidor
 
 ## Autores
 
-+ [@altaskur](https://github.com/altaskur)
+- [@altaskur](https://github.com/altaskur)
