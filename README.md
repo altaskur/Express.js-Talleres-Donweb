@@ -3,13 +3,15 @@
 
 Un repositorio para los talleres de Donweb, explicando cómo funciona Express.js
 
-## Environment Variables
+## Variables de entorno
 
-To run this project, you will need to add the following environment variables to your .env file
+Para poder ejecutar el proyecto necesitamos crear un archivo `.env` en la raíz del proyecto, con las siguientes variables de entorno
 
 `API_KEY`
 
 `ANOTHER_API_KEY`
+
+`MONGO_URL`
 
 ## Instalación del proyecto
 
@@ -17,7 +19,7 @@ Para instalar el proyecto vamos a usar NPM como gestor de librerías en dos tand
 primero las dependencias necesarias para el proyecto
 
 ```bash
-  npm i bcrypt, cors, dotenv, jsonwebtoken, express-validator
+  npm i bcrypt, cors, dotenv, jsonwebtoken, express-validator, mongoose
 ```
 
 Por último, vamos a instalar las dependencias que nos van ayudar con el desarrollo del mismo
