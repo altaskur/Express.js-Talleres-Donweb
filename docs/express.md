@@ -13,6 +13,9 @@
     - [app.set()](#appset)
   - [Propiedades de una petición HTTP](#propiedades-de-una-petición-http)
   - [Propiedades de una respuesta HTTP](#propiedades-de-una-respuesta-http)
+  - [Ejemplo de una aplicación de Express](#ejemplo-de-una-aplicación-de-express)
+  - [Ejemplo de Curd con Express](#ejemplo-de-curd-con-express)
+  - [Ejemplo del uso de Router](#ejemplo-del-uso-de-router)
 
 ## ¿Qué es Express?
 
@@ -119,3 +122,119 @@ app.set('port', 3000);
 - **res.render()**: Nos permite enviar una respuesta de tipo HTML.
 - **res.redirect()**: Nos permite redireccionar a otra ruta.
 - **res.status()**: Nos permite enviar una respuesta con un código de estado.
+
+## Ejemplo de una aplicación de Express
+
+```js
+const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.status(200).send('Hello World');
+});
+
+app.set('port', 3000);
+
+app.listen(app.get('port'), () => {
+  console.log(`Server on port ${app.get('port')}`);
+});
+```
+
+## Ejemplo de Curd con Express
+
+```js
+const express = require('express');
+const app = express();
+const bd = require('./db');
+
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.status(200).send('Hello World');
+});
+
+app.get('/users',async (req, res) => {
+  try{
+    const users = await bd.getUsers();
+    res.status(200).json(users);
+  } catch(err){
+    res.status(500).json({'error': 'Error al obtener los usuarios'});
+  }
+  const users = bd.getUsers();
+  res.status(200).json(users);
+});
+
+app.get('/users/:id', async (req, res) => {
+  try{
+    const user = await bd.getUser(req.params.id);
+    res.status(200).json(user);
+  }catch(err){
+    res.status(404).json({'error': 'User not found'});
+  }
+});
+
+app.post('/users', async (req, res) => {
+  try{
+    const user = await bd.createUser(req.body);
+    res.status(200).json(user);
+  }catch(err){
+    res.status(400).json({'error': 'Error al crear el usuario'});
+  }
+
+});
+
+app.put('/users/:id', async (req, res) => {
+  try{
+    const user = await bd.updateUser(req.params.id, req.body);
+    res.status(200).json(user);
+  }catch(err){
+    res.status(400).json({'error': 'Error al actualizar el usuario'});
+  }
+});
+
+app.delete('/users/:id', async (req, res) => {
+  try{
+   await bd.deleteUser(req.params.id);
+    res.status(200).send(`User ${req.params.id} Deleted`);
+  }catch(err){
+    res.status(400).json({'error': 'Error al eliminar el usuario'});
+  }
+});
+
+app.set('port', 3000);
+
+app.listen(app.get('port'), () => {
+  console.log(`Server on port ${app.get('port')}`);
+});
+```
+
+## Ejemplo del uso de Router
+
+```js
+// router/users.js
+const express = require('express');
+const router = express.Router();
+
+router.get('/', (req, res) => {
+  res.status(200).send('Hello World');
+});
+```
+
+```js
+// main.js
+const express = require('express');
+const app = express();
+const usersRouter = require('./router/users');
+
+app.use(express.json());
+
+app.use('/users', usersRouter);
+
+app.set('port', 3000);
+
+app.listen(app.get('port'), () => {
+  console.log(`Server on port ${app.get('port')}`);
+});
+```
