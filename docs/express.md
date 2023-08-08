@@ -16,6 +16,7 @@
   - [Ejemplo de una aplicación de Express](#ejemplo-de-una-aplicación-de-express)
   - [Ejemplo de Curd con Express](#ejemplo-de-curd-con-express)
   - [Ejemplo del uso de Router](#ejemplo-del-uso-de-router)
+  - [Ejemplo de un Crud con Router y Controller](#ejemplo-de-un-crud-con-router-y-controller)
 
 ## ¿Qué es Express?
 
@@ -220,6 +221,54 @@ const router = express.Router();
 router.get('/', (req, res) => {
   res.status(200).send('Hello World');
 });
+```
+
+```js
+// main.js
+const express = require('express');
+const app = express();
+const usersRouter = require('./router/users');
+
+app.use(express.json());
+
+app.use('/users', usersRouter);
+
+app.set('port', 3000);
+
+app.listen(app.get('port'), () => {
+  console.log(`Server on port ${app.get('port')}`);
+});
+```
+
+## Ejemplo de un Crud con Router y Controller
+
+```js 
+// router/users.js
+const express = require('express');
+const router = express.Router();
+const usersController = require('../controllers/users');
+
+router.get('/', usersController.getUsers);
+
+module.exports = router;
+```
+
+```js
+// controllers/users.js
+const bd = require('../db');
+
+const getUsers = async (req, res) => {
+  try{
+    const users = await bd.getUsers();
+    res.status(200).json(users);
+  } catch(err){
+    res.status(500).json({'error': 'Error al obtener los usuarios'});
+  }
+};
+
+module.exports = {
+  getUsers
+};
 ```
 
 ```js
