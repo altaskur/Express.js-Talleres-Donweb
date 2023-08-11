@@ -98,7 +98,7 @@ Para instalar el proyecto vamos a usar NPM cómo gestor de librerías en dos tan
 primero las dependencias necesarias para el proyecto
 
 ```bash
-  npm i bcrypt, cors, dotenv, jsonwebtoken, express-validator, mongoose
+  npm i bcrypt, cors, dotenv, jsonwebtoken, express-validator, mongoose, express
 ```
 
 Por último, vamos a instalar las dependencias que nos van ayudar con el desarrollo del mismo
