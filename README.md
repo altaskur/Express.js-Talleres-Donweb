@@ -1,7 +1,7 @@
 
 # Repositorio para los talleres de Donweb
 
-Un repositorio para los talleres de Donweb, explicando cómo funciona Express.js
+Un repositorio para seguir el taller de NodeJS y Express para Donweb
 
 - [Repositorio para los talleres de Donweb](#repositorio-para-los-talleres-de-donweb)
   - [Estructura del proyecto](#estructura-del-proyecto)

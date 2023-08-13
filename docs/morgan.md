@@ -121,4 +121,14 @@ que uno existente, este último se sobrescribirá.
 morgan.token('user', (req, res) => {
   return req.headers['x-username']; 
 });
+
+morgan.token('id', (req, res) => {
+  return req.headers['x-id']; 
+});
+```
+
+Ahora podemos usar estos tokens personalizados en nuestra configuración.
+
+```js
+morgan(':user :id')
 ```
