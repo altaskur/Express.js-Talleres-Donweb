@@ -59,7 +59,7 @@ Para este taller vamos a utilizar las siguientes dependencias de producción:
 
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
 - [cors](https://www.npmjs.com/package/cors)
-- [express](https://www.npmjs.com/package/express)
+- [express](./docs/express.md)
 - [dotEnv](https://www.npmjs.com/package/dotenv)
 - [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
 - [mongoose](https://npmjs.com/package/mongoose)
@@ -78,7 +78,7 @@ Las dependencias de desarrollo, son las librerías que nos ayudan a desarrollar 
 Para este taller vamos a utilizar las siguientes dependencias de desarrollo:
 
 - [eslint](./docs/eslint.md)
-- [nodemon](https://www.npmjs.com/package/nodemon)
+- [nodemon](./docs/nodemon.md)
 - [morgan](./docs/morgan.md)
 
   En algunos proyectos, morgan también se utiliza en producción, pero en nuestro caso sólo vamos a utilizarlo para controlar los logs en desarrollo.
