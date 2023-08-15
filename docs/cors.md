@@ -1,5 +1,15 @@
 # Cors
 
+- [Cors](#cors)
+  - [¿Cómo funciona?](#cómo-funciona)
+  - [¿Cómo configurar CORS?](#cómo-configurar-cors)
+    - [Instalación](#instalación)
+    - [Uso](#uso)
+  - [Configuración](#configuración)
+    - [origin](#origin)
+    - [method](#method)
+    - [headers](#headers)
+
 Cors de forma simplificada, es una política de seguridad, que permite o restringe el acceso a recursos de un servidor, desde un dominio especifico.
 
 ## ¿Cómo funciona?
