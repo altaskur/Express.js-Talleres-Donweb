@@ -57,7 +57,7 @@ Existen dos tipos de dependencias, las dependencias de producción y las depende
 
 Para este taller vamos a utilizar las siguientes dependencias de producción:
 
-- [bcrypt](https://www.npmjs.com/package/bcrypt)
+- [bcrypt](./docs/bcrypt.md)
 - [cors](https://www.npmjs.com/package/cors)
 - [express](./docs/express.md)
 - [dotEnv](https://www.npmjs.com/package/dotenv)
