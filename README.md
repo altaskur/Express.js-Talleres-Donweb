@@ -61,7 +61,7 @@ Para este taller vamos a utilizar las siguientes dependencias de producción:
 - [cors](./docs/cors.md)
 - [express](./docs/express.md)
 - [dotEnv](./docs/dotenv.md)
-- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+- [jsonwebtoken](./docs/jsonwebtoken.md)
 - [mongoose](https://npmjs.com/package/mongoose)
 - [express-validator](https://www.npmjs.com/package/express-validator)
 
