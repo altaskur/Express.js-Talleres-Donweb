@@ -60,8 +60,8 @@ Para este taller vamos a utilizar las siguientes dependencias de producción:
 - [bcrypt](./docs/bcrypt.md)
 - [cors](./docs/cors.md)
 - [express](./docs/express.md)
-- [dotEnv](./docs/dotenv.md)
-- [jsonwebtoken](./docs/jsonwebtoken.md)
+- [dotEnv](./docs/dotEnv.md)
+- [jsonwebtoken](./docs/jsonWebToken.md)
 - [mongoose](https://npmjs.com/package/mongoose)
 - [express-validator](https://www.npmjs.com/package/express-validator)
 
