@@ -62,7 +62,7 @@ Para este taller vamos a utilizar las siguientes dependencias de producción:
 - [express](./docs/express.md)
 - [dotEnv](./docs/dotEnv.md)
 - [jsonwebtoken](./docs/jsonWebToken.md)
-- [mongoose](https://npmjs.com/package/mongoose)
+- [mongoose](./docs/mongoose.md)
 - [express-validator](https://www.npmjs.com/package/express-validator)
 
 Para instalarlas ejecutamos el siguiente comando:
