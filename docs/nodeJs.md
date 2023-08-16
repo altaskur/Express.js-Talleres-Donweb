@@ -8,6 +8,12 @@
   - [Diferencias con entornos en navegador](#diferencias-con-entornos-en-navegador)
     - [Acceso al sistema](#acceso-al-sistema)
     - [Interpretación de los módulos](#interpretación-de-los-módulos)
+  - [Estructura de un proyecto en Node.js](#estructura-de-un-proyecto-en-nodejs)
+  - [package.json](#packagejson)
+    - [Script de inicio](#script-de-inicio)
+  - [package-lock.json](#package-lockjson)
+  - [node\_modules](#node_modules)
+  - [main.js](#mainjs)
 
 ## ¿Qué es Node.js?
 
@@ -37,3 +43,83 @@ Para acceder al sistema, desde node, tenemos módulos que podemos ir añadiendo 
 ### Interpretación de los módulos
 
 Al contrario que se indica en las últimas versiones de EMCScript, el uso de módulos en nuestras apps de Node.js, están de forma predeterminada en `Common-js` y aunque esto ultimo puede configurarse, puede llegar a dar problemas según el tipo de librería o framework que utilicemos, por lo tanto no recomiendo el uso de estos, si no has utilizado antes con node.js.
+
+## Estructura de un proyecto en Node.js
+
+Un proyecto de Node.js tiene de base tres ficheros y una carpeta.
+
+Carpeta del proyecto
+├── package.json
+├── package-lock.json
+├── main.js
+└── node_modules
+
+## package.json
+
+Este fichero JSON de configuración es el que contiene la información del proyecto, cómo el nombre, la versión o los autores, también se definen los scripts de inicio y que dependencias serán de desarrollo y cuales no.
+
+Un ejemplo de este fichero sería el siguiente:
+
+```json
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "Proyecto de ejemplo de Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": ["node", "nodejs", "javascript"],
+  "author": "Altaskur",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
+```
+
+### Script de inicio
+
+Para ejecutar una aplicación de express, indicaremos dentro del apartado "scripts", la abreviatura que queramos usar para iniciar la aplicación, lo más común es usar ``start``, ``dev``, ``build`` o ``test``.
+
+- Start: Inicia la aplicación en modo producción.
+- Dev: Inicia la aplicación en modo desarrollo, en nuestro caso usando Nodemon.
+- Build: Utilizado para compilar el proyecto, en caso de que sea necesario, muy común en proyectos de Frontend.
+- Test: Utilizado para ejecutar los test de la aplicación.
+
+ejemplo del apartado de scripts:
+
+```json
+"scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+```
+
+Ahora para ejecutar nuestra aplicación, solo tendremos que ejecutar `npm run` seguido del nombre definido en el apartado de scripts.
+
+```bash
+npm run dev
+```
+
+> Ten en cuenta que con ``start`` no es necesario usar ``run`` simplemente con ``npm start`` será suficiente.
+
+## package-lock.json
+
+Este fichero es generado automáticamente por npm, y contiene la información de las dependencias que se han instalado en el proyecto, así cómo las versiones de las mismas. Es recomendable no modificar este fichero, ya que puede dar problemas en la instalación de las dependencias.
+
+> Este fichero no debes subirlo a tu repositorio, ya que se genera automáticamente, añade el fichero a tu ``.gitignore`` para evitar subirlo a tu repositorio.
+
+## node_modules
+
+Esta carpeta contiene todas las dependencias que se han descargado del proyecto, una vez ejecutamos ``npm install``, o su versión abreviada ``npm i``.
+
+> No debes subir esta carpeta a tu repositorio, ya que ocupa mucho espacio y con tan solo ejecutar ``npm i`` o ``npm install`` se descargaran todas las dependencias de nuevo.
+
+## main.js
+
+Este es el fichero de inicio, del cual partirá nuestra aplicación, de normal se encuentra en la carpeta src y puedes encontrarlo también cómo index.js
