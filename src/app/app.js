@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 
+const userRouter = require('../router/users');
+const { dbConnection } = require('../db/connection');
+
 const app = express();
 
 const corsOptions = {
@@ -15,7 +18,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const userRouter = require('../router/users');
+dbConnection();
 
 app.use('/users', userRouter);
 

@@ -1,8 +1,11 @@
 const express = require('express');
-const { getUsers } = require('../controller/users');
+const { getUsers, singUpUser, singInUser } = require('../controller/users');
+const { verifyToken } = require('../jwt/jwt');
 
 const router = express.Router();
 
-router.use('/', getUsers);
+router.get('/', verifyToken, getUsers);
+router.post('/', singUpUser);
+router.post('/login', singInUser);
 
 module.exports = router;
